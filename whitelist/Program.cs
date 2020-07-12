@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Net.Http;
-using System.Xml;
 using whitelist.models;
 
 namespace whiltelist
@@ -20,8 +16,8 @@ namespace whiltelist
 
         static async Task Main(string[] args)
         {
-            AzureIpv4s ipv4s = new AzureIpv4s(new HttpClient());
-            AzureIpv4Parser parser = new AzureIpv4Parser(await ipv4s.GetJsonFile());
+            AzureIPv4Ranges iPv4Ranges = new AzureIPv4Ranges(new HttpClient(), new GenerateFilename(DateTime.Now));
+            AzureIPv4Parser parser = new AzureIPv4Parser(await iPv4Ranges.GetJsonFile());
             NginxConfString confString = new NginxConfString(await parser.Parse());
             
             var directoryInfo = Directory.CreateDirectory(Output);

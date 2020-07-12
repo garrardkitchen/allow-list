@@ -26,6 +26,5 @@ namespace whitelist_tests.UnitTests
             // assert
             Assert.NotEqual(0, content.Length);
         }
-
     }
 }

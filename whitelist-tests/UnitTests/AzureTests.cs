@@ -15,7 +15,8 @@ namespace whitelist_tests.UnitTests
     public class AzureTests
     {
         private HttpClient _httpClient;
-        
+        private Mock<IGenerateFilename> _mockGenerateFilename;
+
         public AzureTests()
         {
             var handlerMock = new Mock<HttpMessageHandler>(MockBehavior.Strict);
@@ -39,12 +40,15 @@ namespace whitelist_tests.UnitTests
                 BaseAddress = new Uri("http://test.com/"),
             };
 
+            _mockGenerateFilename = new Mock<IGenerateFilename>();
+            _mockGenerateFilename.Setup(x => x.Create()).Returns("");
         }
+        
         [Fact]
         public async Task Get_something_back_from_request()
         {
             // arrange
-            var azure = new AzureIpv4s(_httpClient);
+            var azure = new AzureIPv4Ranges(_httpClient, _mockGenerateFilename.Object);
 
             // act
             var jsonFile = await azure.GetJsonFile();
@@ -58,7 +62,7 @@ namespace whitelist_tests.UnitTests
         {
             // arrange
             JObject raw = JObject.Parse(await File.ReadAllTextAsync($"data{Path.DirectorySeparatorChar}ServiceTags_Public_20200629.json")); 
-            var azure = new AzureIpv4Parser(raw.ToString());
+            var azure = new AzureIPv4Parser(raw.ToString());
 
             // act
             Runners json = await azure.Parse();

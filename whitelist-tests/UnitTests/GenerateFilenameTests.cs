@@ -10,7 +10,7 @@ namespace whitelist_tests.UnitTests
         private const string Filename = "ServiceTags_Public_";
         
         [Fact]
-        public void Create_Filename_From_DaysAfter1()
+        public void Create_filename_with_date_1_day_after_update_release()
         {
             // arrange
             
@@ -25,7 +25,7 @@ namespace whitelist_tests.UnitTests
         }
         
         [Fact]
-        public void Create_Filename_From_DaysAfter2()
+        public void Create_filename_with_date_2_days_after_update_release()
         {
             // arrange
             DateTime date = new DateTime(2020, 07, 08);
@@ -39,7 +39,7 @@ namespace whitelist_tests.UnitTests
         }
         
         [Fact]
-        public void Create_Filename_From_DaysAfter3()
+        public void Create_filename_with_date_3_days_after_update_release()
         {
             // arrange
             DateTime date = new DateTime(2020, 07, 09);
@@ -53,7 +53,7 @@ namespace whitelist_tests.UnitTests
         }
         
         [Fact]
-        public void Create_Filename_From_DaysAfter4()
+        public void Create_filename_with_date_4_days_after_update_release()
         {
             // arrange
             DateTime date = new DateTime(2020, 07, 10);
@@ -67,7 +67,7 @@ namespace whitelist_tests.UnitTests
         }
         
         [Fact]
-        public void Create_Filename_From_DaysAfter5()
+        public void Create_filename_with_date_5_days_after_update_release()
         {
             // arrange
             DateTime date = new DateTime(2020, 07, 11);
@@ -81,7 +81,7 @@ namespace whitelist_tests.UnitTests
         }
         
         [Fact]
-        public void Create_Filename_From_DaysAfter6()
+        public void Create_filename_with_date_6_days_after_update_release()
         {
             // arrange
             DateTime date = new DateTime(2020, 07, 12);
@@ -95,7 +95,7 @@ namespace whitelist_tests.UnitTests
         }
         
         [Fact]
-        public void Create_Filename_From_DaysAfter7()
+        public void Create_filename_with_date_7_days_after_update_release()
         {
             // arrange
             DateTime date = new DateTime(2020, 07, 13);
@@ -109,7 +109,7 @@ namespace whitelist_tests.UnitTests
         }
         
         [Fact]
-        public void Create_Filename_From_DaysAfter8()
+        public void Create_filename_with_date_8_days_after_update_release()
         {
             // arrange
             DateTime date = new DateTime(2020, 07, 14);

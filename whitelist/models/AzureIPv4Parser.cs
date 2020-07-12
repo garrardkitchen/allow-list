@@ -3,11 +3,11 @@ using Newtonsoft.Json;
 
 namespace whitelist.models
 {
-    public class AzureIpv4Parser
+    public class AzureIPv4Parser
     {
         private readonly string _raw;
 
-        public AzureIpv4Parser(string raw)
+        public AzureIPv4Parser(string raw)
         {
             _raw = raw;
         }
