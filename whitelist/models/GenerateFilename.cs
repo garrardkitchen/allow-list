@@ -2,11 +2,10 @@
 
 namespace whitelist.models
 {
-    public interface IGenerateFilename
-    {
-        string Create();
-    }
-
+    /// <summary>
+    /// The URI of the endpoint is updated every Monday so get new file on the next day (avoid complications with time differences etc).
+    /// On Monday or before, always get the previous week's JSON
+    /// </summary>
     public class GenerateFilename : IGenerateFilename
     {
         private readonly DateTime _date;
@@ -22,17 +21,15 @@ namespace whitelist.models
         {
             DateTime newDate = _date;
 
-            if (_date.DayOfWeek != MagicDate.DayOfWeek)
+            int diff = MagicDate.DayOfWeek - _date.DayOfWeek;
+
+            if (_date.DayOfWeek > MagicDate.DayOfWeek)
             {
-                int diff = MagicDate.DayOfWeek - _date.DayOfWeek;
-                if (diff > 0)
-                {
-                    newDate = newDate.AddDays(-(7-diff));
-                }
-                else
-                {
-                    newDate = newDate.AddDays(diff);
-                }            
+                newDate = newDate.AddDays(diff);
+            }
+            else
+            {
+                newDate = newDate.AddDays(-(7 - diff));
             }
 
             return $"ServiceTags_Public_{newDate:yyyyMMdd}";

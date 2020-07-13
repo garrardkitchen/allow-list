@@ -105,7 +105,7 @@ namespace whitelist_tests.UnitTests
             var result = generateFilename.Create();
             
             // assert
-            Assert.Equal($"{Filename}20200713", result);
+            Assert.Equal($"{Filename}20200706", result);
         }
         
         [Fact]
@@ -126,8 +126,8 @@ namespace whitelist_tests.UnitTests
         {
             return new List<object[]>
             {
-                new object[] { new DateTime(2020, 06, 01), "ServiceTags_Public_20200601"},
-                new object[] { new DateTime(2021, 10, 11), "ServiceTags_Public_20211011"},
+                new object[] { new DateTime(2020, 07, 06), "ServiceTags_Public_20200629"},
+                new object[] { new DateTime(2020, 07, 07), "ServiceTags_Public_20200706"},
                 new object[] { new DateTime(2030, 01, 01), "ServiceTags_Public_20291231"}
             };
         }
