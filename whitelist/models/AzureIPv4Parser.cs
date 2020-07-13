@@ -12,9 +12,9 @@ namespace whitelist.models
             _raw = raw;
         }
         
-        public async Task<Runners> Parse()
+        public Task<Runners> Parse()
         {
-            return JsonConvert.DeserializeObject<Runners>(_raw);
+            return Task.FromResult(JsonConvert.DeserializeObject<Runners>(_raw));
         }
     }
 }
