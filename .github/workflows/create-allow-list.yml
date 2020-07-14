@@ -55,8 +55,7 @@ jobs:
         git config --local user.name "Garrard Kitchen"
         git checkout -b ${{ github.event.inputs.pr_branch }}
         git add '${{ github.event.inputs.includes_folder }}/github-actions-runners.conf'        
-        git commit -m "chore(cicd): added updated runners"
-        git pull origin ${{ github.event.inputs.pr_branch }}
+        git commit -m "chore(cicd): added updated runners"        
     - name: PUSH
       uses: ad-m/github-push-action@master
       with:
