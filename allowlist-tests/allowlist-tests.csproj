@@ -2,9 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>whitelist_tests</RootNamespace>
+    <RootNamespace>AllowListTests</RootNamespace>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>AllowListTests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\whitelist\whitelist.csproj" />
+    <ProjectReference Include="..\allowlist\allowlist.csproj" />
   </ItemGroup>
 
   <ItemGroup>

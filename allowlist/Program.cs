@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net.Http;
-using whitelist.models;
+using AllowList.models;
 
-namespace whiltelist
+namespace AllowList
 {
     class Program
     {

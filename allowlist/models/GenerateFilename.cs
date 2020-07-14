@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace whitelist.models
+namespace AllowList.models
 {
     /// <summary>
     /// The URI of the endpoint is updated every Monday so get new file on the next day (avoid complications with time differences etc).

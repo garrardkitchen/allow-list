@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using whitelist.models;
+using AllowList.models;
 using Xunit;
 
-namespace whitelist_tests.UnitTests
+namespace AllowListTests.UnitTests
 {
     public class GenerateFilenameTests
     {

@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "whiltelist", "whitelist\whitelist.csproj", "{0779138C-3EB6-411B-83D5-8A90389A174D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "allowlist", "allowlist\allowlist.csproj", "{0779138C-3EB6-411B-83D5-8A90389A174D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "whitelist-tests", "whitelist-tests\whitelist-tests.csproj", "{0AE3506A-0806-4671-A31A-28768CCC3590}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "allowlist-tests", "allowlist-tests\allowlist-tests.csproj", "{0AE3506A-0806-4671-A31A-28768CCC3590}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{74F9EA31-AA85-4EB4-A6B1-6AF0AAFCC113}"
+ProjectSection(SolutionItems) = preProject
+	README.md = README.md
+EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace whitelist.models
+namespace AllowList.models
 {
     public class NginxConfString
     {
@@ -18,7 +16,7 @@ namespace whitelist.models
             _json = json;
         }
 
-        public async Task<StringBuilder> Create()
+        public Task<StringBuilder> Create()
         {
             var list = from j in _json.Values 
                 where _regions.Contains(j.Name)
@@ -38,7 +36,7 @@ namespace whitelist.models
                 output.AppendLine("");
             }
 
-            return output;
+            return Task.FromResult(output);
         }
     }
 }

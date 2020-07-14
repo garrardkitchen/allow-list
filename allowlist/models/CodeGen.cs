@@ -12,7 +12,7 @@ using System.Globalization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace whitelist.models
+namespace AllowList.models
 {
     public partial class Runners
     {

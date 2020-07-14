@@ -1,16 +1,14 @@
 using System;
-using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using AllowList.models;
 using Moq;
 using Moq.Protected;
-using Newtonsoft.Json.Linq;
-using whitelist.models;
 using Xunit;
 
-namespace whitelist_tests.UnitTests
+namespace AllowListTests.UnitTests
 {
     public class AzureUnhappyTests
     {

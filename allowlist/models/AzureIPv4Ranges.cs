@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using CSharpFunctionalExtensions;
 using Polly;
 
-namespace whitelist.models
+namespace AllowList.models
 {
     public class AzureIPv4Ranges : IAzureIpv4Ranges
     {

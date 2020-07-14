@@ -1,4 +1,4 @@
-﻿namespace whitelist.models
+﻿namespace AllowList.models
 {
     public interface IGenerateFilename
     {

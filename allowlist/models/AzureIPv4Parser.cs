@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace whitelist.models
+namespace AllowList.models
 {
     public class AzureIPv4Parser
     {
