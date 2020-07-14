@@ -22,25 +22,25 @@ jobs:
     - name: INSTALL DEPENDENCIES
       run: dotnet restore
     - name: BUILD
-      run: dotnet build -c Release --no-restore -o /app/build
+      run: dotnet build -c Release --no-restore -o app/build
     - name: TEST
       run: dotnet test --no-restore --verbosity normal
     - name: PUBLISH
       run: |
         pushd ''
-        dotnet build -c Release -o /app/publish -r linux-x64
+        dotnet build -c Release -o app/publish -r linux-x64
         popd
     - name: RUN
       run: |
-        dotnet run /app/publish/WhiteList.dll
-        cat /output/github-actions-runners.conf        
+        dotnet run app/publish/WhiteList.dll
+        cat output/github-actions-runners.conf        
     - name: COPY
-      run: COPY /output/github-actions-runners.conf /includes
+      run: COPY output/github-actions-runners.conf includes/
     - name: COMMIT FILE
       run: |
         git config --local user.email "garrardkitchen@gmail.com"
         git config --local user.name "Garrard Kitchen"
-        git add /includes/github-actions-runners.conf
+        git add includes/github-actions-runners.conf
         git commit -m "chore(cicd): added updated runners"
     - name: PUSH
       uses: ad-m/github-push-action@master

@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{74F9EA31-AA85-4EB4-A6B1-6AF0AAFCC113}"
 ProjectSection(SolutionItems) = preProject
 	README.md = README.md
+	.github\workflows\create-allow-list.yml = .github\workflows\create-allow-list.yml
 EndProjectSection
 EndProject
 Global
