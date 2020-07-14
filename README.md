@@ -44,6 +44,10 @@ The GitHub Actions Manifest that is included here:
  - allows you to run this whenever using [manual trigger](https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/) using and 
  - every Tuesday (day after the scheduled update).  
 
-# Getting Started
+## Getting Started
 
 TBC
+
+## Troubleshooting
+
+If the job fails at the PUSH stage it means that you've not pulled this branch before pushing it.
