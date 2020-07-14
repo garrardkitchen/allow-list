@@ -7,6 +7,10 @@ on:
         description: 'Copy .conf too'     
         required: true
         default: 'includes'
+      pr_branch:
+        description: 'Branch to push changes to'     
+        required: true
+        default: 'github-actions-runners'        
 
   # push:
   #   branches:
@@ -49,17 +53,19 @@ jobs:
       run: |
         git config --local user.email "garrardkitchen@gmail.com"
         git config --local user.name "Garrard Kitchen"
+        git checkout -b ${{ github.event.inputs.pr_branch }}
         git add '${{ github.event.inputs.includes_folder }}/github-actions-runners.conf'        
         git commit -m "chore(cicd): added updated runners"
-        git pull origin ${{ github.ref }}
+        git pull origin ${{ github.event.inputs.pr_branch }}
     - name: PUSH
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+        branch: ${{ github.event.inputs.pr_branch }}
     - name: CREATE PR
       id: cpr
       uses: peter-evans/create-pull-request@v2
       with:
         title: "Update GitHub Actions Runners list"
+        branch: ${{ github.event.inputs.pr_branch }}
         
