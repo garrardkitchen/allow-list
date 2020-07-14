@@ -34,8 +34,10 @@ jobs:
       run: |
         dotnet app/publish/AllowList.dll
         cat output/github-actions-runners.conf        
-    - name: COPY
-      run: cp output/github-actions-runners.conf includes/
+    - name: COPY      
+      run: |
+        mkdir includes
+        cp output/github-actions-runners.conf includes/
     - name: COMMIT FILE
       run: |
         git config --local user.email "garrardkitchen@gmail.com"
