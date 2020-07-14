@@ -43,19 +43,20 @@ jobs:
         cat output/github-actions-runners.conf        
     - name: COPY      
       run: |
-        mkdir -p '{{ github.event.inputs.includes_folder }}'
-        cp output/github-actions-runners.conf '{{ github.event.inputs.includes_folder }}/'
+        mkdir -p '${{ github.event.inputs.includes_folder }}'
+        cp output/github-actions-runners.conf '${{ github.event.inputs.includes_folder }}/'
     - name: COMMIT FILE
       run: |
         git config --local user.email "garrardkitchen@gmail.com"
         git config --local user.name "Garrard Kitchen"
-        git add '{{ github.event.inputs.includes_folder }}/github-actions-runners.conf'        
+        git add '${{ github.event.inputs.includes_folder }}/github-actions-runners.conf'        
         git commit -m "chore(cicd): added updated runners"
-        git pull
+        git pull origin ${{ github.ref }}
     - name: PUSH
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
     - name: CREATE PR
       id: cpr
       uses: peter-evans/create-pull-request@v2
