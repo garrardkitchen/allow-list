@@ -18,7 +18,7 @@ jobs:
     - name: SETUP .NET CORE
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.300
+        dotnet-version: 3.1.301
     - name: INSTALL DEPENDENCIES
       run: dotnet restore
     - name: BUILD
@@ -32,7 +32,7 @@ jobs:
         popd
     - name: RUN
       run: |
-        dotnet run app/publish/AllowList.dll
+        dotnet app/publish/AllowList.dll
         cat output/github-actions-runners.conf        
     - name: COPY
       run: COPY output/github-actions-runners.conf includes/
